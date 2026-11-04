@@ -13,12 +13,12 @@ const NavMarquee = async () => {
 
     const products: Product[] = await productsRes.json();
     return (
-        <div className="bg-base-100 border-b border-base-200 py-2.5 ">
+        <div className="bg-base-100 border-b border-base-300">
             <Marquee speed={150} pauseOnHover gradient={false}>
                 {products.map((product) => (
                     <div
                         key={product.id}
-                        className="mx-6 flex items-center gap-2">
+                        className="flex items-center border border-base-300 px-12 py-2">
                         <span>{product.image}</span>
                         <span className="font-medium">{product.nameBn}</span>
 
