@@ -1,26 +1,74 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+    themes: bazar-dor-light --default;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@plugin "daisyui/theme" {
+    name: "bazar-dor-light";
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Base colors */
+    --color-base-100: #f0f5f0;
+    --color-base-200: #e1e8e1;
+    --color-base-300: #dadeda;
+    --color-base-content: #1d271f;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Brand colors */
+    --color-primary: #05893e;
+    --color-primary-content: #f3fbf4;
+
+    --color-secondary: #047f39;
+    --color-secondary-content: #ffffff;
+
+    --color-accent: #047c37;
+    --color-accent-content: #ffffff;
+
+    /* Neutral */
+    --color-neutral: #1d271f;
+    --color-neutral-content: #ffffff;
+
+    /* Status colors */
+    --color-success: #1a9951;
+    --color-success-content: #ffffff;
+
+    --color-error: #d03739;
+    --color-error-content: #fff6f5;
+
+    --color-info: #0284c7;
+    --color-info-content: #ffffff;
+
+    --color-warning: #d97706;
+    --color-warning-content: #ffffff;
+
+    /* Border radius */
+    --radius-selector: 1rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+
+    /* Base sizes */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* Border and effects */
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+
+    /* Custom brand colors */
+    --brand-base-pink: #facfca;
+    --brand-primary-strong: #047f39;
+    --brand-primary-stronger: #047c37;
+
+    /* Custom hover and border colors */
+    --hover-neutral-bg: #dadeda;
+    --hover-neutral-border: #ccd0cc;
+    --hover-primary-border: #037333;
+    --hover-error-bg: #bd3133;
+    --hover-error-border: #b02d2f;
+    --link-primary: #02642b;
+
+    /* Additional colors */
+    --brand-white: #ffffff;
 }
