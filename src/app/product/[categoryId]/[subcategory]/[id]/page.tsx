@@ -15,8 +15,6 @@ interface ProductDetailsPageProps {
 const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
     const { id } = await params;
 
-    console.log(id);
-
     const productRes = await fetch(
         `https://openapi.programming-hero.com/api/bazardor/products/${id}`,
     );
@@ -31,8 +29,7 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
             label: product.nameBn,
         },
     ];
-    console.log(id);
-
+    
     return (
         <main className="bg-base-200">
             <div className="max-w-6xl mx-auto py-10 px-4 space-y-6">

@@ -3,7 +3,6 @@
 import { SubmitEvent, useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
 import { signIn, signUp } from "@/lib/auth-client";
@@ -38,10 +37,7 @@ const SignUpForm = () => {
             password: String(formObject.password),
         });
 
-        console.log(data, error);
-
         if (data?.token) {
-            console.log("Triggered");
             toast.success(`Welcome ${data?.user.name}`);
             router.push("/");
         }
@@ -52,11 +48,9 @@ const SignUpForm = () => {
     };
 
     const handleGoogleSignUp = async () => {
-        const data = await signIn.social({
+        await signIn.social({
             provider: "google",
         });
-
-        console.log(data);
     };
 
     return (

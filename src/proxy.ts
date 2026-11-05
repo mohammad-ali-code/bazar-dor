@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
-import { toast } from "react-toastify";
 
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
