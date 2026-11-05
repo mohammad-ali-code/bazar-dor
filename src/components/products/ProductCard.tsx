@@ -38,7 +38,7 @@ const ProductCard = ({ product }: ProductCardPropsType) => {
             <div className="flex justify-between items-end">
                 <div className="text-base-content">
                     <p className="text-xs">আজকের দাম</p>
-                    <p className="text-2xl leading-6 font-bold">
+                    <p className="text-xl leading-6 font-bold">
                         {product.today}{" "}
                         <span className="text-sm font-semibold">টাকা</span>
                     </p>

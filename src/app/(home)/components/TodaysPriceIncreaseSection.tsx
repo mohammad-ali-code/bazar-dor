@@ -21,7 +21,7 @@ const TodaysPriceIncreaseSection = async () => {
             </h2>
             <div>
                 <ProductsGrid
-                    pricesIncreasedProductsSorted={
+                    products={
                         pricesIncreasedProductsSorted
                     }></ProductsGrid>
             </div>

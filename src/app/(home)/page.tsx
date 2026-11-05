@@ -1,3 +1,4 @@
+import AllProductsSection from "./components/AllProductsSection";
 import BannerSection from "./components/BannerSection";
 import TodayPriceDecreaseSection from "./components/TodayPriceDecreaseSection";
 import TodaysPriceIncreaseSection from "./components/TodaysPriceIncreaseSection";
@@ -9,6 +10,7 @@ export default function Home() {
                 <BannerSection></BannerSection>
                 <TodaysPriceIncreaseSection></TodaysPriceIncreaseSection>
                 <TodayPriceDecreaseSection></TodayPriceDecreaseSection>
+                <AllProductsSection></AllProductsSection>
             </div>
         </main>
     );

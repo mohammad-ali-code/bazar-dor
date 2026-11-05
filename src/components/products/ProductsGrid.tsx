@@ -2,15 +2,15 @@ import { Product } from "@/types/types";
 import React from "react";
 import ProductCard from "./ProductCard";
 interface ProductsGridPropsType {
-    pricesIncreasedProductsSorted: Product[];
+    products: Product[];
 }
 
 const ProductsGrid = ({
-    pricesIncreasedProductsSorted,
+    products,
 }: ProductsGridPropsType) => {
     return (
         <div className="grid grid-cols-3 gap-4  mt-5">
-            {pricesIncreasedProductsSorted.map((product) => (
+            {products.map((product) => (
                 <ProductCard key={product.id} product={product}></ProductCard>
             ))}
         </div>
