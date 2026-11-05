@@ -41,6 +41,14 @@ const SignInForm = () => {
         }
     };
 
+    const handleGoogleSignUp = async () => {
+        const data = await signIn.social({
+            provider: "google",
+        });
+
+        console.log(data);
+    };
+
     return (
         <div className="space-y-4">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -110,14 +118,12 @@ const SignInForm = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-                <button type="button" className={socialButtonClass}>
+                <button
+                    type="button"
+                    onClick={handleGoogleSignUp}
+                    className={socialButtonClass}>
                     <FcGoogle size={18} />
                     Google দিয়ে চালিয়ে যান
-                </button>
-
-                <button type="button" className={socialButtonClass}>
-                    <FaGithub size={18} />
-                    GitHub দিয়ে চালিয়ে যান
                 </button>
             </div>
 

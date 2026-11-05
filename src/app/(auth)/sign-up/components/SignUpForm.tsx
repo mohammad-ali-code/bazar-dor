@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 
 const inputClass =
@@ -19,6 +19,7 @@ const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const router = useRouter();
+
     const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -48,6 +49,14 @@ const SignUpForm = () => {
         if (error?.message) {
             toast.error(error.message);
         }
+    };
+
+    const handleGoogleSignUp = async () => {
+        const data = await signIn.social({
+            provider: "google",
+        });
+
+        console.log(data);
     };
 
     return (
@@ -168,14 +177,12 @@ const SignUpForm = () => {
                 <span className="h-px flex-1 bg-base-300" />
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-                <button type="button" className={socialButtonClass}>
+                <button
+                    type="button"
+                    onClick={handleGoogleSignUp}
+                    className={socialButtonClass}>
                     <FcGoogle size={18} />
                     Google দিয়ে চালিয়ে যান
-                </button>
-
-                <button type="button" className={socialButtonClass}>
-                    <FaGithub size={18} />
-                    GitHub দিয়ে চালিয়ে যান
                 </button>
             </div>
 
