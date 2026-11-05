@@ -6,7 +6,7 @@ const BannerSection = () => {
 
     return (
         <section className="w-full">
-            <div className="flex flex-col justify-between gap-8 rounded-3xl border border-base-300 bg-secondary-content px-4 py-3 lg:flex-row lg:gap-0">
+            <div className="flex flex-col justify-between gap-8 rounded-3xl border border-base-300 bg-primary-content px-4 py-3 lg:flex-row lg:gap-0">
                 <div className="w-full text-center lg:text-left">
                     <div className="mb-3 inline-block rounded-full bg-[#e0f1e7] px-4 py-1.5 text-sm font-semibold text-[#008f4c] md:text-base">
                         {today}
