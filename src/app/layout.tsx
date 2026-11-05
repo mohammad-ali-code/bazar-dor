@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import { ToastContainer } from "react-toastify";
+import Footer from "@/components/Footer";
 
 const hindSiliguri = Hind_Siliguri({
-  subsets: ["bengali", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-hind-siliguri",
-  display: "swap",
+    subsets: ["bengali", "latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-hind-siliguri",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     <Navbar></Navbar>
                 </header>
                 <main>{children}</main>
-                <footer></footer>
+                <footer>
+                    <Footer></Footer>
+                </footer>
+                <ToastContainer />
             </body>
         </html>
     );

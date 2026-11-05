@@ -14,7 +14,7 @@ const MarketWisePrices = ({ product }: MarketWisePricesPropsType) => {
         ...market,
         avg: (market.min + market.max) / 2,
     }));
-    
+
     const rowsSorted = rows.sort((a, b) => a.avg - b.avg);
 
     return (
