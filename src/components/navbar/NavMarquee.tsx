@@ -1,5 +1,6 @@
 import { Product } from "@/types/types";
 import Marquee from "react-fast-marquee";
+import ProductPriceChange from "../products/ProductPriceChange";
 
 const NavMarquee = async () => {
     const productsRes = await fetch(
@@ -18,27 +19,14 @@ const NavMarquee = async () => {
                 {products.map((product) => (
                     <div
                         key={product.id}
-                        className="flex items-center border border-base-300 px-12 py-2">
+                        className="flex items-center border border-base-300 space-x-1.5 px-12 py-2">
                         <span>{product.image}</span>
                         <span className="font-medium">{product.nameBn}</span>
 
                         <span>৳{product.today}</span>
 
-                        <span
-                            className={
-                                product.change.pct > 0
-                                    ? "text-red-500"
-                                    : product.change.pct < 0
-                                      ? "text-green-500"
-                                      : "text-gray-500"
-                            }>
-                            {product.change.pct > 0
-                                ? "▲"
-                                : product.change.pct < 0
-                                  ? "▼"
-                                  : "━"}{" "}
-                            {Math.abs(product.change.pct)}%
-                        </span>
+                        <ProductPriceChange
+                            price={product.change.pct}></ProductPriceChange>
                     </div>
                 ))}
             </Marquee>

@@ -1,4 +1,5 @@
 import BannerSection from "./components/BannerSection";
+import TodayPriceDecreaseSection from "./components/TodayPriceDecreaseSection";
 import TodaysPriceIncreaseSection from "./components/TodaysPriceIncreaseSection";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
             <div className="max-w-6xl mx-auto py-10 px-4 space-y-10">
                 <BannerSection></BannerSection>
                 <TodaysPriceIncreaseSection></TodaysPriceIncreaseSection>
+                <TodayPriceDecreaseSection></TodayPriceDecreaseSection>
             </div>
         </main>
     );

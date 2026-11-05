@@ -1,6 +1,5 @@
 import ProductsGrid from "@/components/products/ProductsGrid";
 import { Product } from "@/types/types";
-import React from "react";
 
 const TodaysPriceIncreaseSection = async () => {
     const allProductsRes = await fetch(
