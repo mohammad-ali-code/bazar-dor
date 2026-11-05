@@ -1,6 +1,7 @@
 import { Product } from "@/types/types";
 import Marquee from "react-fast-marquee";
-import ProductPriceChange from "../products/ProductPriceChange";
+import ProductPriceChangeNumber from "../products/ProductPriceChangeNumber";
+import { toBanglaNumber } from "@/libs/numberEnglishToBangla";
 
 const NavMarquee = async () => {
     const productsRes = await fetch(
@@ -23,10 +24,12 @@ const NavMarquee = async () => {
                         <span>{product.image}</span>
                         <span className="font-medium">{product.nameBn}</span>
 
-                        <span>৳{product.today}</span>
+                        <span>৳{toBanglaNumber(product.today)}</span>
 
-                        <ProductPriceChange
-                            price={product.change.pct}></ProductPriceChange>
+                        <ProductPriceChangeNumber
+                            priceChange={
+                                product.change.pct
+                            }></ProductPriceChangeNumber>
                     </div>
                 ))}
             </Marquee>
