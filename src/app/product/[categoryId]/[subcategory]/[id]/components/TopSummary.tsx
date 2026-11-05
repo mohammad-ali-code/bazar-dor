@@ -9,6 +9,7 @@ interface TopSummaryPropsType {
 }
 
 const TopSummary = ({ product }: TopSummaryPropsType) => {
+    console.log(product);
     const unitNameInBangla = getUnitNameInBangla(product.unit);
 
     return (

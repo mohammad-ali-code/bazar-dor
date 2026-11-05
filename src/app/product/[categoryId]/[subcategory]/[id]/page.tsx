@@ -6,13 +6,16 @@ import MarketPriceOverview from "./components/MarketPriceOverview";
 
 interface ProductDetailsPageProps {
     params: Promise<{
-        productSlug: string[];
+        category: string;
+        subcategory: string;
+        id: string;
     }>;
 }
 
 const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
-    const { productSlug } = await params;
-    const [, , id] = productSlug;
+    const { id } = await params;
+
+    console.log(id);
 
     const productRes = await fetch(
         `https://openapi.programming-hero.com/api/bazardor/products/${id}`,
@@ -22,14 +25,12 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
     const breadCrumbLinks = [
         {
             label: product.categoryNameBn,
-            href: `/products/${product.category}}`,
+            href: `/product/${product.category}`,
         },
         {
             label: product.nameBn,
-            href: `/products/rice/${product.slug}`,
         },
     ];
-
     console.log(id);
 
     return (

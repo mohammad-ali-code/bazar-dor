@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 interface BreadcrumbItem {
     label: string;
-    href: string;
+    href?: string;
 }
 
 interface BreadcrumbProps {
@@ -26,7 +26,9 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                     const isLast = index === items.length - 1;
 
                     return (
-                        <li key={item.href} className="flex items-center gap-2">
+                        <li
+                            key={`${item.label}-${index}`}
+                            className="flex items-center gap-2">
                             <span className="text-base-content/40">
                                 <IoIosArrowForward />
                             </span>
@@ -39,7 +41,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                                 </span>
                             ) : (
                                 <Link
-                                    href={item.href}
+                                    href={item.href ?? "/"}
                                     className="text-base-content/60 hover:text-primary">
                                     {item.label}
                                 </Link>

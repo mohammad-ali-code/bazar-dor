@@ -9,7 +9,7 @@ interface PriceSummaryPropsType {
 const PriceSummary = ({ product }: PriceSummaryPropsType) => {
     const markets = product.markets;
     const lowestPrice = Math.min(...markets.map((market) => market.min));
-    const highestPrice = Math.min(...markets.map((market) => market.max));
+    const highestPrice = Math.max(...markets.map((market) => market.max));
     const averagePrice = Math.round((highestPrice + lowestPrice) / 2);
 
     return (
