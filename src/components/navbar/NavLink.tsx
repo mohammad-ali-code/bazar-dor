@@ -14,15 +14,13 @@ const NavLink = ({ link }: NavLinkProps) => {
     const isActive = pathname === href;
 
     return (
-        <li>
-            <Link
-                href={href}
-                className={`px-4 py-2 space-x-1.5 ${
-                    isActive
-                        ? "bg-primary text-primary-content font-semibold"
-                        : "text-base-content hover:bg-base-200"
-                }`}
-                aria-current={isActive ? "page" : undefined}>
+        <li
+            className={` px-4 py-2 border flex justify-center items-center border-base-300 space-x-1.5 ${
+                isActive
+                    ? "bg-primary text-primary-content font-semibold"
+                    : "text-base-content hover:bg-base-200"
+            }`}>
+            <Link href={href} aria-current={isActive ? "page" : undefined}>
                 <span>{link.icon}</span>
                 <span>{link.nameBn}</span>
             </Link>

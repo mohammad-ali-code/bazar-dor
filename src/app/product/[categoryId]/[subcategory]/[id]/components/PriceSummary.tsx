@@ -17,7 +17,7 @@ const PriceSummary = ({ product }: PriceSummaryPropsType) => {
             <h2 className="text-lg font-semibold text-base-content mb-3">
                 দামের সারসংক্ষেপ
             </h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="border border-base-300 rounded-2xl w-full px-6 py-4">
                     <h3 className="text-xs text-base-content">সর্বনিম্ন দাম</h3>
                     <p className="text-2xl font-bold text-success">

@@ -12,7 +12,7 @@ const Navbar = async () => {
     return (
         <nav>
             <NavHead serverSession={serverSession}></NavHead>
-            <NavLinks></NavLinks>
+            <NavLinks ></NavLinks>
             <NavMarquee></NavMarquee>
         </nav>
     );

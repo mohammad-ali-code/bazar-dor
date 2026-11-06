@@ -12,8 +12,8 @@ const TopSummary = ({ product }: TopSummaryPropsType) => {
     const unitNameInBangla = getUnitNameInBangla(product.unit);
 
     return (
-        <div className="bg-primary-content rounded-2xl border border-base-300 flex justify-between items-center p-5.5">
-            <div className="flex items-center gap-4">
+        <div className="bg-primary-content rounded-2xl border border-base-300 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between sm:items-center p-5.5">
+            <div className="flex justify-between sm:justify-baseline items-center gap-4">
                 <div className="bg-base-200 text-3xl p-5 rounded-2xl">
                     {product.image}
                 </div>

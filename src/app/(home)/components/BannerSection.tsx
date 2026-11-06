@@ -27,7 +27,7 @@ const BannerSection = () => {
                         </button>
                     </a>
                 </div>
-                <div className="w-full flex items-end max-w-78.75 shrink-0">
+                <div className="w-full flex items-end max-w-78.75 mx-auto lg:mx-0 shrink-0">
                     <Image
                         src="/bazar-hero.png"
                         alt="Banner logo"

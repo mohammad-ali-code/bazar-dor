@@ -16,8 +16,8 @@ const NavLinks = async () => {
     };
 
     return (
-        <div className="bg-base-100 border-b border-base-200 py-2.5 px-10">
-            <ul className="flex items-center gap-2">
+        <div className="bg-base-100 border-b border-base-200 lg:px-10">
+            <ul className="grid grid-cols-3 lg:flex lg:items-center lg:flex-wrap">
                 <NavLink link={homeLink}></NavLink>
                 {linksData.map((link) => (
                     <NavLink key={link.id} link={link}></NavLink>
